@@ -166,6 +166,26 @@ skillBadges.forEach(badge => {
     badge.style.transition = 'all 0.5s ease';
 });
 
+// Add WhatsApp floating Contact Me button
+const whatsappBtn = document.createElement('button');
+whatsappBtn.innerHTML = `
+    <div class="flex items-center space-x-2">
+        <i class="fab fa-whatsapp text-xl"></i>
+        <span class="font-medium">Contact Me</span>
+    </div>
+`;
+whatsappBtn.className = 'fixed bottom-8 left-8 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 flex items-center justify-center hover:scale-105';
+whatsappBtn.style.transition = 'all 0.3s ease';
+
+whatsappBtn.addEventListener('click', () => {
+    const phoneNumber = '971529193084'; // Removed leading zeros for proper WhatsApp URL
+    const message = 'Hi From Website! I would like to discuss a project opportunity with you.';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+});
+
+document.body.appendChild(whatsappBtn);
+
 // Add scroll-to-top button
 const scrollToTopBtn = document.createElement('button');
 scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
