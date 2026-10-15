@@ -1,0 +1,3 @@
+/* Native dialog fallback: keep case-study details available if the browser lacks dialog support. */
+.js.dialog-enabled #case-study-details { display: none; }
+.js:not(.dialog-enabled) #case-study-details { display: block; }
